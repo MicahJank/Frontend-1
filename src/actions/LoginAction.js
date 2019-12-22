@@ -4,12 +4,10 @@ export const LOGIN_LOADING = 'LOGIN_LOADING';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 
-export const userLogin = (userLogin) => dispatch => {
-    console.log('Reached userLogin function');
+export const userLogin = userInfo => dispatch => {
     dispatch({ type: LOGIN_LOADING });
-    console.log('Something is happening');
     axiosWithAuth()
-        .post("/auth/login", userLogin)
+        .post("/auth/login", userInfo)
         .then(res => {
             console.log('Logging in in progress', res.data);
             dispatch({ type: LOGIN_SUCCESS, payload: res.data });

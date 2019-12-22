@@ -1,6 +1,5 @@
 const initialState = {
-    studentInfo: [],
-    helperInfo: [],
+    userInfo: [],
     isLoading: false,
     error: null
 }
@@ -8,40 +7,20 @@ const initialState = {
 export const LoginReducer = (state = initialState, action) => {
     switch(action.type) {
         // Reducer cases for student login
-        case STUDENT_LOGIN_LOADING: 
+        case LOGIN_LOADING: 
             return {
                 ...state, 
                 isLoading: true,
                 error: ""
             }
-        case STUDENT_LOGIN_SUCCESS: 
+        case LOGIN_SUCCESS: 
             return {
                 ...state,
-                studentInfo: action.payload,
+                userInfo: action.payload,
                 isLoading: false,
                 error: ""
             }
-        case STUDENT_LOGIN_FAILURE: 
-            return {
-                ...state,
-                isLoading: false,
-                error: action.payload
-            }
-        // Reducer cases for family login
-        case HELPER_LOGIN_LOADING: 
-            return {
-                ...state, 
-                isLoading: true,
-                error: ""
-            }
-        case HELPER_LOGIN_SUCCESS: 
-            return {
-                ...state,
-                helperInfo: action.payload,
-                isLoading: false,
-                error: ""
-            }
-        case HELPER_LOGIN_FAILURE: 
+        case LOGIN_FAILURE: 
             return {
                 ...state,
                 isLoading: false,

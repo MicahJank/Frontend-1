@@ -5,17 +5,22 @@ const isAuthenticated = () => {
     return localStorage.getItem("token") ? true: false;
 }
 
-export default function PrivateRoute({ component: Component, ...rest}) {
+export default function PrivateRoute({ component: Component, ...rest }) {
     return (
         <Route 
             {...rest}
-            render = {({ location }) => {
+            render = {({ location }) => 
                 isAuthenticated() ? (
-                    <Component /> 
+                    <Component />
                 ) : (
-                    <Redirect to={{ pathname: "/login", state: { from: location }}} />
+                    <Redirect 
+                        to={{
+                            pathname: "/",
+                            state: { from: location }
+                        }} 
+                    />
                 )
-            }}
+            }
         />
     )
 }

@@ -1,25 +1,47 @@
 const initialState = {
-    user: null,
+    studentInfo: [],
+    helperInfo: [],
     isLoading: false,
     error: null
 }
 
 export const LoginReducer = (state = initialState, action) => {
     switch(action.type) {
-        case LOGIN_LOADING: 
+        // Reducer cases for student login
+        case STUDENT_LOGIN_LOADING: 
             return {
                 ...state, 
                 isLoading: true,
                 error: ""
             }
-        case LOGIN_SUCCESS: 
+        case STUDENT_LOGIN_SUCCESS: 
             return {
                 ...state,
-                user: action.payload,
+                studentInfo: action.payload,
                 isLoading: false,
                 error: ""
             }
-        case LOGIN_FAILURE: 
+        case STUDENT_LOGIN_FAILURE: 
+            return {
+                ...state,
+                isLoading: false,
+                error: action.payload
+            }
+        // Reducer cases for family login
+        case HELPER_LOGIN_LOADING: 
+            return {
+                ...state, 
+                isLoading: true,
+                error: ""
+            }
+        case HELPER_LOGIN_SUCCESS: 
+            return {
+                ...state,
+                helperInfo: action.payload,
+                isLoading: false,
+                error: ""
+            }
+        case HELPER_LOGIN_FAILURE: 
             return {
                 ...state,
                 isLoading: false,

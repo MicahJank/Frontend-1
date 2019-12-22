@@ -1,3 +1,9 @@
+import {
+    REGISTER_LOADING,
+    REGISTER_SUCCESS,
+    REGISTER_FAILURE,
+} from '../actions'
+
 const initialState = {
     userInfo: null,
     isLoading: false,

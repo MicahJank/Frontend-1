@@ -1,3 +1,9 @@
+import {
+    LOGIN_LOADING,
+    LOGIN_SUCCESS,
+    LOGIN_FAILURE,
+} from '../actions'
+
 const initialState = {
     userInfo: [],
     isLoading: false,

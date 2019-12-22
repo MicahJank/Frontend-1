@@ -10,7 +10,7 @@ const initialState = {
     error: null
 }
 
-export const LoginReducer = (state = initialState, action) => {
+const RegisterReducer = (state = initialState, action) => {
     switch(action.type) {
         case REGISTER_LOADING: 
             return {
@@ -35,3 +35,5 @@ export const LoginReducer = (state = initialState, action) => {
             return state;
     }
 }
+
+export default RegisterReducer;

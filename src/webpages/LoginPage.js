@@ -4,7 +4,7 @@
 **/
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import useForm from 'react-hook-form';
 import { userLogin } from '../actions/LoginAction';
@@ -12,11 +12,11 @@ import { userLogin } from '../actions/LoginAction';
 function LoginPage() {
   const dispatch = useDispatch();
   const { register, handleSubmit, errors } = useForm(); 
-
+  const history = useHistory();
   const onSubmit = data => {
     console.log('showing the login', data);
     dispatch(userLogin(data));
-    console.log('called but failed');
+    history.push('/student-dashboard');
   }
 
   return (
@@ -46,3 +46,12 @@ function LoginPage() {
 }
 
 export default LoginPage;
+
+
+// const MapDispatchToProps = (dispatch) => {
+//   return {
+//     userLogin: (data, history) => dispatch(userLogin(data, history))
+//   }
+// }
+
+// export default connect(null, MapDispatchToProps)(LoginPage);

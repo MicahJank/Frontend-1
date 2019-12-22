@@ -4,15 +4,16 @@
 **/
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
   return (
     <div>
       <h1>This is the home page of DevDesk!</h1>
-      <button>Take me to the login page~ </button>
+      <Link to="/login"><button>Take me to the login page~ </button></Link>
       <br />
       <br />
-      <button>Register at here</button>
+      <Link to="/register"><button>Register at here</button></Link>
       <h3>To-Do: Design This Page~~~</h3>
     </div>
   );

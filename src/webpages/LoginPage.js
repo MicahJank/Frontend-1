@@ -5,12 +5,18 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import useForm from 'react-hook-form';
+import { userLogin } from '../actions/LoginAction';
 
 function LoginPage() {
+  const dispatch = useDispatch();
   const { register, handleSubmit, errors } = useForm(); 
+
   const onSubmit = data => {
-    console.log(data);
+    console.log('showing the login', data);
+    dispatch(userLogin(data));
+    console.log('called but failed');
   }
 
   return (
@@ -27,6 +33,7 @@ function LoginPage() {
         <label className="form-label">Password</label>
         <input 
           name="password"
+          type="password"
           ref={register({ required: true })}
           className="form-input"
         />

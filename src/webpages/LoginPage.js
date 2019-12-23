@@ -46,12 +46,3 @@ function LoginPage() {
 }
 
 export default LoginPage;
-
-
-// const MapDispatchToProps = (dispatch) => {
-//   return {
-//     userLogin: (data, history) => dispatch(userLogin(data, history))
-//   }
-// }
-
-// export default connect(null, MapDispatchToProps)(LoginPage);

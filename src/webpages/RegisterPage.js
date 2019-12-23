@@ -1,6 +1,7 @@
 /**
 * This is the register page.
 * After the user completes registration, it should guide them to the login page
+* After registration, should go back to login page
 **/
 
 import React from 'react';

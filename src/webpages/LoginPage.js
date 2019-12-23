@@ -13,10 +13,10 @@ function LoginPage() {
   const dispatch = useDispatch();
   const { register, handleSubmit, errors } = useForm(); 
   const history = useHistory();
-  const onSubmit = data => {
+  const onSubmit = async data => {
     console.log('showing the login', data);
-    dispatch(userLogin(data));
-    history.push('/student-dashboard');
+    await dispatch(userLogin(data));
+    history.push('/dashboard');
   }
 
   return (

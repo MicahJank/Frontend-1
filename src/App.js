@@ -14,8 +14,8 @@ function App() {
       <Route exact path="/" component={HomePage} />
       <Route exact path="/login" component={LoginPage} />
       <Route exact path="/register" component={RegisterPage} />
-      <PrivateRoute exact path="/student-dashboard" component={DashStudent} />
-      <PrivateRoute exact path="/helper-dashboard" component={DashHelper} />
+      <PrivateRoute exact path="/dashboard" component={DashStudent} />
+      {/* To do: Add a check user type to render the proper component to the dashboard */}
     </main>
   );
 }

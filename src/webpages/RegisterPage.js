@@ -14,9 +14,9 @@ function RegisterPage() {
   const dispatch = useDispatch();
   const { register, handleSubmit, errors } = useForm(); 
   const history = useHistory();
-  const onSubmit = data => {
+  const onSubmit = async data => {
     console.log('showing the login', data);
-    dispatch(userRegister(data));
+    await dispatch(userRegister(data));
     history.push('/login');
   }
 

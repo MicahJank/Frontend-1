@@ -14,7 +14,6 @@ function LoginPage() {
   const { register, handleSubmit, errors } = useForm(); 
   const history = useHistory();
   const onSubmit = async data => {
-    console.log('showing the login', data);
     await dispatch(userLogin(data));
     history.push('/dashboard');
   }

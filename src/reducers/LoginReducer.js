@@ -6,6 +6,7 @@ import {
 
 const initialState = {
     userInfo: [],
+    userType: "",
     isLoading: false,
     error: null
 }
@@ -13,15 +14,18 @@ const initialState = {
 const LoginReducer = (state = initialState, action) => {
     switch(action.type) {
         case LOGIN_LOADING: 
+            console.log("Login starting.")
             return {
                 ...state, 
                 isLoading: true,
                 error: ""
             }
         case LOGIN_SUCCESS: 
+            console.log("Login successful.")
             return {
                 ...state,
                 userInfo: action.payload.user,
+                userType: action.payload.user.role,
                 isLoading: false,
                 error: ""
             }

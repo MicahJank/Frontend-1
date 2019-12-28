@@ -1,6 +1,7 @@
 /**
 * This is the register page.
 * After the user completes registration, it should guide them to the login page
+* After registration, should go back to login page
 **/
 
 import React from 'react';
@@ -13,9 +14,9 @@ function RegisterPage() {
   const dispatch = useDispatch();
   const { register, handleSubmit, errors } = useForm(); 
   const history = useHistory();
-  const onSubmit = data => {
+  const onSubmit = async data => {
     console.log('showing the login', data);
-    dispatch(userRegister(data));
+    await dispatch(userRegister(data));
     history.push('/login');
   }
 

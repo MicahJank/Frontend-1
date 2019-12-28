@@ -4,11 +4,23 @@
 **/
 
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { getTickets, postTicket } from '../actions/TicketsAction';
 
 function DashStudent() {
+  const dispatch = useDispatch();
+
+  const getData = () => {
+    console.log("Staring");
+    dispatch(getTickets());
+  }
+
   return (
     <div>
       <h1>Student's homepage goes here.</h1>
+      <button onClick={getData}>Click Me</button>
+      <Link to="/"><button>Go Back Home</button></Link>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { useSelector, useStore } from 'react-redux';
+import { useSelector } from 'react-redux';
 import PrivateRoute from './utils/PrivateRoute';
 import HomePage from './webpages/HomePage';
 import LoginPage from './webpages/LoginPage';

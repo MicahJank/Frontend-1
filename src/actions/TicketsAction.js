@@ -18,3 +18,18 @@ export const getTickets = () => dispatch => {
             dispatch({ type: TICKETS_FAILURE, payload: err.data })
         })
 }
+
+export const postTicket = (ticket) => dispatch => {
+    dispatch({ type: TICKETS_LOADING });
+    console.log("Reaching tickets action")
+    axiosWithAuth()
+        .post("/tickets", ticket)
+        .then(res => {
+            console.log(res);
+            dispatch({ type: TICKETS_SUCCESS, payload: res.data })
+        })
+        .catch(err => {
+            console.log(err);
+            dispatch({ type: TICKETS_FAILURE, payload: err.data })
+        })
+}

@@ -3,10 +3,10 @@
 * It will contain a list of student's tickets
 **/
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getTickets } from '../actions/TicketsAction';
+import { getTickets, postTicket } from '../actions/TicketsAction';
 
 function DashStudent() {
   const dispatch = useDispatch();

@@ -6,12 +6,13 @@ import HomePage from './webpages/HomePage';
 import LoginPage from './webpages/LoginPage';
 import RegisterPage from './webpages/RegisterPage';
 import DashStudent from './webpages/DashStudent';
-//import DashHelper from './webpages/DashHelper';
+import DashHelper from './webpages/DashHelper';
 import './App.css';
 
 function App() {
   const userType = useSelector(state => state.LoginReducer.userType);
   console.log("the usertype is", userType);
+
   //const store = useStore();
   //console.log('The store have states', store.getState().LoginReducer);
 
@@ -20,11 +21,17 @@ function App() {
       <Route exact path="/" component={HomePage} />
       <Route exact path="/login" component={LoginPage} />
       <Route exact path="/register" component={RegisterPage} />
-      {/* To do: Add a check user type to render the proper component to the dashboard */}
-      {userType === "Student" 
-        ? <PrivateRoute exact path="/dashboard" component={DashStudent} /> 
-        : null
-      }
+      {/* Find a way to better control extra user type cases */}
+      <PrivateRoute exact path="/dashboard" component={() => {
+        switch(userType) {
+          case "Student": 
+            return <DashStudent />
+          case "Helper": 
+            return <DashHelper />
+          default: 
+            return null;
+        }
+      }} />
     </main>
   );
 }

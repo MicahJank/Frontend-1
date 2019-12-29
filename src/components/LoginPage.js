@@ -28,6 +28,9 @@ function LoginPage() {
           className="form-input"
         />
         {errors.email && <p className="form-p">You need a proper email to login!</p>}
+        {/*
+          To Do: Add specific requirements for password
+        */}
         <label className="form-label">Password</label>
         <input 
           name="password"

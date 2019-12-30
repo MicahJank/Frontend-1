@@ -6,7 +6,7 @@ import {
 
 const initialState = {
     userInfo: [],
-    userType: localStorage.getItem("Identity") || "",
+    userType: localStorage.getItem("user_identity") || "",
     isLoading: false,
     error: null
 }

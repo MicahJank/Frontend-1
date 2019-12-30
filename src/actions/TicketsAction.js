@@ -10,8 +10,9 @@ export const getTickets = () => dispatch => {
     axiosWithAuth()
         .get("/tickets")
         .then(res => {
-            console.log(res);
+            console.log("Getting response data", res.data);
             dispatch({ type: TICKETS_SUCCESS, payload: res.data })
+            localStorage.setItem("student_tickets", JSON.stringify(res.data))
         })
         .catch(err => {
             console.log(err);

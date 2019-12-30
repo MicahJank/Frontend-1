@@ -7,6 +7,7 @@ import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import DashStudent from './components/DashStudent';
 import DashHelper from './components/DashHelper';
+import TicketForm from './components/tickets/TicketForm';
 import './App.css';
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
             return null;
         }
       }} />
+      <PrivateRoute exact path="/dashboard/post" component={TicketForm} />
     </main>
   );
 }

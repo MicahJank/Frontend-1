@@ -6,27 +6,21 @@
 * It should also provide a button to open a form, allowing ticket creation
 **/
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import useForm from 'react-hook-form';
-import { getTickets, postTicket } from '../actions/TicketsAction';
+import { postTicket } from '../actions/TicketsAction';
 import TicketList from './tickets/TicketList';
 
 function DashStudent() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const { register, handleSubmit, errors } = useForm(); 
-  const [tickets, setTickets] = useState(localStorage.getItem("student_tickets") || []);
-
-  useEffect(() => {
-    dispatch(getTickets());
-    setTickets(localStorage.getItem("student_tickets"));
-    console.log("Are tickets being set?", localStorage.getItem("student_tickets"));
-  }, [dispatch])
 
   const onSubmit = data => {
     console.log("Starting to submit a ticket", data);
-    dispatch(postTicket(data));
+    dispatch(postTicket(data, ()=>history.push('/dashboard')));
   }
 
   return (
@@ -34,7 +28,7 @@ function DashStudent() {
       <h1>Student's homepage goes here.</h1>
       <Link to="/"><button>Go Back Home</button></Link>
       <div className="ticket-display">
-        <TicketList studentTickets={tickets} />
+        <TicketList />
       </div>
       <div className="form-body"> 
         <h1 className="form-h1">Submit A Ticket</h1>

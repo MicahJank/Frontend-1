@@ -1,7 +1,8 @@
 import {
     TICKETS_LOADING,
     TICKETS_SUCCESS,
-    TICKETS_FAILURE
+    TICKETS_FAILURE,
+    TICKET_POST_SUCCESS
 } from '../actions';
 
 const initialState = {
@@ -23,6 +24,12 @@ const TicketsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 tickets: action.payload.data,
+                isLoading: false
+            }
+        case TICKET_POST_SUCCESS:
+            console.log("Successfully posted a ticket");
+            return {
+                ...state,
                 isLoading: false
             }
         case TICKETS_FAILURE:

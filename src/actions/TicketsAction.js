@@ -5,7 +5,7 @@ export const TICKETS_SUCCESS = 'TICKETS_SUCCESS';
 export const TICKETS_FAILURE = 'TICKETS_FAILURE';
 export const TICKET_POST_SUCCESS = 'TICKET_POST_SUCCESS'
 
-export const getTickets = (setTickets) => dispatch => {
+export const getTickets = () => dispatch => {
     dispatch({ type: TICKETS_LOADING });
     console.log("Reaching tickets action")
     axiosWithAuth()
@@ -13,7 +13,6 @@ export const getTickets = (setTickets) => dispatch => {
         .then(res => {
             console.log("Getting response data", res.data);
             dispatch({ type: TICKETS_SUCCESS, payload: res.data })
-            setTickets(res.data);
         })
         .catch(err => {
             console.log(err);

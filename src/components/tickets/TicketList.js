@@ -8,8 +8,8 @@ const TicketList = () => {
     const [tickets, setTickets] = useState([]);
 
     useEffect(() => {
-      dispatch(getTickets());
-      setTickets(JSON.parse(localStorage.getItem("student_tickets")));
+        dispatch(getTickets());
+        setTickets(JSON.parse(localStorage.getItem("student_tickets")));
     }, [])
 
     return (

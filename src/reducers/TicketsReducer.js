@@ -30,6 +30,7 @@ const TicketsReducer = (state = initialState, action) => {
             console.log("Successfully posted a ticket");
             return {
                 ...state,
+                tickets: [...tickets, action.payload.data],
                 isLoading: false
             }
         case TICKETS_FAILURE:

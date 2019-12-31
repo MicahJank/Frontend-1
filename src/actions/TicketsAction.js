@@ -28,18 +28,7 @@ export const postTicket = (ticket, redirect) => dispatch => {
         .post("/tickets", ticket)
         .then(res => {
             console.log("Getting back from server after posting a ticket", res);
-            dispatch({ type: TICKET_POST_SUCCESS });
-            axiosWithAuth()
-                .get("/tickets")
-                .then(res => {
-                    console.log("Getting response data", res.data);
-                    dispatch({ type: TICKETS_SUCCESS, payload: res.data })
-                    localStorage.setItem("student_tickets", JSON.stringify(res.data))
-                })
-                .catch(err => {
-                    console.log(err);
-                    dispatch({ type: TICKETS_FAILURE, payload: err.data })
-                });
+            dispatch({ type: TICKET_POST_SUCCESS, payload: res.data });
             redirect();
         })
         .catch(err => {

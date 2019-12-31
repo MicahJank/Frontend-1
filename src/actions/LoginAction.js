@@ -11,7 +11,7 @@ export const userLogin = (userInfo, redirect) => dispatch => {
         .then(res => {
             console.log('Logging in in progress', res.data);
             dispatch({ type: LOGIN_SUCCESS, payload: res.data });
-            localStorage.setItem('Identity', res.data.user.role);
+            localStorage.setItem('user_identity', res.data.user.role);
             localStorage.setItem('token', res.data.token);
             redirect();
         })

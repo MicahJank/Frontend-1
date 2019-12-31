@@ -7,11 +7,12 @@ import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import DashStudent from './components/DashStudent';
 import DashHelper from './components/DashHelper';
+import TicketForm from './components/tickets/TicketForm';
 import './App.css';
 
 function App() {
   const userType = useSelector(state => state.LoginReducer.userType);
-  console.log("the usertype is", userType);
+  //console.log("the usertype is", userType);
 
   //const store = useStore();
   //console.log('The store have states', store.getState().LoginReducer);
@@ -36,6 +37,7 @@ function App() {
             return null;
         }
       }} />
+      <PrivateRoute exact path="/dashboard/post" component={TicketForm} />
     </main>
   );
 }

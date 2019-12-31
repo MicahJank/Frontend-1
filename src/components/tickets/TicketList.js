@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getTickets } from '../../actions/TicketsAction';
 import TicketItem from './TicketItem';
 
@@ -8,9 +8,8 @@ const TicketList = () => {
     const [tickets, setTickets] = useState([]);
 
     useEffect(() => {
-        dispatch(getTickets());
-        setTickets(JSON.parse(localStorage.getItem("student_tickets")));
-    }, [])
+        dispatch(getTickets(setTickets));
+    }, [dispatch])
 
     return (
         <div>

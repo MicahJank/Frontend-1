@@ -7,6 +7,7 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import LoginReducer from './reducers/LoginReducer';
 import RegisterReducer from './reducers/RegisterReducer';
+import TicketsReducer from './reducers/TicketsReducer';
 
 import './index.css';
 import App from './App';
@@ -14,7 +15,8 @@ import * as serviceWorker from './serviceWorker';
 
 const rootReducer = combineReducers({
     LoginReducer,
-    RegisterReducer
+    RegisterReducer,
+    TicketsReducer
 })
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));

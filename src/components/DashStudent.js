@@ -6,45 +6,21 @@
 * It should also provide a button to open a form, allowing ticket creation
 **/
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useStore } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getTickets } from '../actions/TicketsAction';
-import TicketItem from './tickets/TicketItem';
-import axiosWithAuth from '../utils/axiosWithAuth';
+import TicketList from './tickets/TicketList';
 
 function DashStudent() {
-  //const dispatch = useDispatch();
-  const [tickets, setTickets] = useState([]);
-  //const tickets = useSelector(state => state.tickets);
-  //const isLoading = useSelector(state => state.isLoading);
-
-  //useEffect(() => {
-      //dispatch(getTickets());
-      //setTickets(JSON.parse(localStorage.getItem("student_tickets")));
-  //}, [dispatch])
-
-  useEffect(() => {
-    axiosWithAuth()
-      .get("/tickets")
-      .then(res => {
-        setTickets(res.data);
-      })
-      .catch(err => {
-        console.log(err);
-      })
-  })
-
+  const store = useStore();
+  console.log('The store have states', store.getState().TicketsReducer);
+  
   return (
     <div>
       <h1>Student's homepage goes here.</h1>
       <Link to="/dashboard/post"><button>Post Ticket</button></Link>
       <Link to="/"><button>Go Back Home</button></Link>
-      <div className="ticket-display">
-        {tickets.map(ticket => {
-          return <TicketItem ticket={ticket} key={ticket.id} />
-        })}
-      </div>
+      <TicketList />
     </div>
   );
 }

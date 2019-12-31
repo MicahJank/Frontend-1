@@ -6,7 +6,7 @@ import {
 } from '../actions';
 
 const initialState = {
-    tickets: [],
+    tickets: null,
     isLoading: false,
     error: ""
 }

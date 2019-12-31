@@ -12,7 +12,7 @@ import './App.css';
 
 function App() {
   const userType = useSelector(state => state.LoginReducer.userType);
-  console.log("the usertype is", userType);
+  //console.log("the usertype is", userType);
 
   //const store = useStore();
   //console.log('The store have states', store.getState().LoginReducer);

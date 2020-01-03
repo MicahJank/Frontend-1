@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import useForm from 'react-hook-form';
-import { editTicket } from '../../actions/TicketsAction';
+import { editTicket, deleteTicket } from '../../actions/TicketsAction';
 
 const TicketItem = props => {
     const dispatch = useDispatch();
@@ -11,6 +11,10 @@ const TicketItem = props => {
 
     const toggleEdit = () => {
         setEditing(!editing);
+    }
+
+    const toggleDelete = () => {
+        dispatch(deleteTicket(id));
     }
 
     const onSubmit = data => {
@@ -28,7 +32,7 @@ const TicketItem = props => {
                     <p>{props.ticket.description}</p>
                     <div>
                         <button onClick={()=>toggleEdit()}>Edit</button>
-                        <button>Delete</button>
+                        <button onClick={()=>toggleDelete()}>Delete</button>
                     </div>
                 </div> :
                 <div> 

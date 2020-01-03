@@ -61,3 +61,26 @@ export const editTicket = (ticket, id) => dispatch => {
             dispatch({ type: TICKETS_FAILURE, payload: err.data });
         })
 }
+
+export const deleteTicket = id => dispatch => {
+    dispatch({ type: TICKETS_LOADING });
+    axiosWithAuth()
+        .delete(`/tickets/${id}`)
+        .then(res => {
+            console.log("Deleting ticket", res);
+            axiosWithAuth()
+                .get("/tickets")
+                .then(res => {
+                    console.log("Getting response data", res.data);
+                    dispatch({ type: TICKETS_SUCCESS, payload: res.data })
+                })
+                .catch(err => {
+                    console.log(err);
+                    dispatch({ type: TICKETS_FAILURE, payload: err.data })
+                })
+        })
+        .catch(err => {
+            console.log(err);
+            dispatch({ type: TICKETS_FAILURE, payload: err.data });
+        })
+}

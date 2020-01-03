@@ -36,10 +36,11 @@ export const postTicket = (ticket, redirect) => dispatch => {
         })
 }
 
-export const editTicket = ticket => dispatch => {
+export const editTicket = (ticket, id) => dispatch => {
     dispatch({ type: TICKETS_LOADING });
+    console.log("Starting to edit a ticket in action");
     axiosWithAuth()
-        .put(`/tickets/${ticket.id}`, ticket)
+        .put(`/tickets/${id}`, ticket)
         .then(res => {
             console.log("After editing a ticket", res);
             dispatch({ type: TICKET_POST_SUCCESS, payload: res.data });

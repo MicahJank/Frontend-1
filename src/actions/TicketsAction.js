@@ -3,7 +3,8 @@ import axiosWithAuth from '../utils/axiosWithAuth';
 export const TICKETS_LOADING = 'TICKETS_LOADING';
 export const TICKETS_SUCCESS = 'TICKETS_SUCCESS';
 export const TICKETS_FAILURE = 'TICKETS_FAILURE';
-export const TICKET_POST_SUCCESS = 'TICKET_POST_SUCCESS'
+export const TICKET_POST_SUCCESS = 'TICKET_POST_SUCCESS';
+export const TICKET_PUT_SUCCESS = 'TICKET_PUT_SUCCESS';
 
 export const getTickets = () => dispatch => {
     dispatch({ type: TICKETS_LOADING });
@@ -43,7 +44,17 @@ export const editTicket = (ticket, id) => dispatch => {
         .put(`/tickets/${id}`, ticket)
         .then(res => {
             console.log("After editing a ticket", res);
-            dispatch({ type: TICKET_POST_SUCCESS, payload: res.data });
+            dispatch({ type: TICKET_PUT_SUCCESS });
+            axiosWithAuth()
+                .get("/tickets")
+                .then(res => {
+                    console.log("Getting response data", res.data);
+                    dispatch({ type: TICKETS_SUCCESS, payload: res.data })
+                })
+                .catch(err => {
+                    console.log(err);
+                    dispatch({ type: TICKETS_FAILURE, payload: err.data })
+                })
         })
         .catch(err => {
             console.log(err);

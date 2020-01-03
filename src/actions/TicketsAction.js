@@ -35,3 +35,17 @@ export const postTicket = (ticket, redirect) => dispatch => {
             dispatch({ type: TICKETS_FAILURE, payload: err.data })
         })
 }
+
+export const editTicket = ticket => dispatch => {
+    dispatch({ type: TICKETS_LOADING });
+    axiosWithAuth()
+        .put(`/tickets/${ticket.id}`, ticket)
+        .then(res => {
+            console.log("After editing a ticket", res);
+            dispatch({ type: TICKET_POST_SUCCESS, payload: res.data });
+        })
+        .catch(err => {
+            console.log(err);
+            dispatch({ type: TICKETS_FAILURE, payload: err.data });
+        })
+}

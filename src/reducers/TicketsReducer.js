@@ -26,6 +26,7 @@ const TicketsReducer = (state = initialState, action) => {
                 tickets: action.payload,
                 isLoading: false
             }
+        // This case handles post, put
         case TICKET_POST_SUCCESS:
             console.log("Successfully posted a ticket");
             return {

@@ -7,6 +7,10 @@ const TicketItem = props => {
             <h3>{props.ticket.title}</h3>
             <h5>{props.ticket.tried}</h5>
             <p>{props.ticket.description}</p>
+            <div>
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
         </div>
     )
 }

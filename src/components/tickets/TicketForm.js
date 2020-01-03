@@ -21,9 +21,9 @@ function TicketForm() {
                 {/* Submitting a ticket: Title */}
                 <label className="form-label">Title</label>
                 <input 
-                name="title" 
-                ref={register({ required: true })} 
-                className="form-input"
+                    name="title" 
+                    ref={register({ required: true })} 
+                    className="form-input"
                 />
                 {errors.title && <p className="form-p">A title is required!</p>}
                 {/* Submitting a ticket: Category */}
@@ -37,17 +37,17 @@ function TicketForm() {
                 {/* Submitting a ticket: Description */}
                 <label className="form-label">Description</label>
                 <input
-                name="description"
-                ref={register({ required: true })}
-                className="form-input"
+                    name="description"
+                    ref={register({ required: true })}
+                    className="form-input"
                 />
                 {errors.description && <p className="form-p">Please enter a description.</p>}
                 {/* Submitting a ticket: Attempt */}
                 <label className="form-label">Attempt</label>
                 <input
-                name="tried"
-                ref={register({ required: true })}
-                className="form-input"
+                    name="tried"
+                    ref={register({ required: true })}
+                    className="form-input"
                 />
                 {errors.attempt && <p className="form-p">Tell us if this is your first attempt, second attempt, etc.</p>}
                 {/* Submitting the ticket */}

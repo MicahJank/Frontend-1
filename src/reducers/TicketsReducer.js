@@ -32,7 +32,7 @@ const TicketsReducer = (state = initialState, action) => {
             console.log("Successfully posted a ticket");
             return {
                 ...state,
-                tickets: [action.payload, ...state.tickets],
+                tickets: [...state.tickets, action.payload],
                 isLoading: false
             }
         // This case handles put

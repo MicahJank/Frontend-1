@@ -53,14 +53,13 @@ export const editTicket = (ticket, id) => dispatch => {
         })
 }
 
-export const deleteTicket = (id, redirect) => dispatch => {
+export const deleteTicket = id => dispatch => {
     dispatch({ type: TICKETS_LOADING });
     axiosWithAuth()
         .delete(`/tickets/${id}`)
         .then(res => {
             console.log("Deleting ticket", res);
             dispatch({ type: TICKET_DELETE_SUCCESS, payload: id });
-            redirect();
         })
         .catch(err => {
             console.log(err);

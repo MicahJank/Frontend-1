@@ -21,6 +21,7 @@ const TicketsReducer = (state = initialState, action) => {
                 ...state,
                 isLoading: true,
             }
+        // This case handles GET
         case TICKETS_SUCCESS: 
             console.log("Successfully getting the tickets");
             return {
@@ -28,7 +29,7 @@ const TicketsReducer = (state = initialState, action) => {
                 tickets: action.payload,
                 isLoading: false
             }
-        // This case handles post
+        // This case handles POST
         case TICKET_POST_SUCCESS:
             console.log("Successfully posted a ticket");
             return {
@@ -36,7 +37,7 @@ const TicketsReducer = (state = initialState, action) => {
                 tickets: [action.payload, ...state.tickets],
                 isLoading: false
             }
-        // This case handles put
+        // This case handles PUT
         case TICKET_PUT_SUCCESS: 
             console.log("Successfully edited a ticket");
             return {
@@ -46,11 +47,12 @@ const TicketsReducer = (state = initialState, action) => {
                 }),
                 isLoading: false
             }
+        // This case handles DELETE
         case TICKET_DELETE_SUCCESS:
             console.log("Successfully deleted a ticket");
             return {
                 ...state,
-                tickets: state.tickets.filter(ticket => action.payload !== ticket.id),
+                tickets: state.tickets.filter(ticket => Number(action.payload) !== ticket.id),
                 isLoading: false
             }
         case TICKETS_FAILURE:

@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import useForm from 'react-hook-form';
 import { editTicket, deleteTicket } from '../../actions/TicketsAction';
 
 const TicketItem = props => {
     const dispatch = useDispatch();
-    const history = useHistory();
     const [editing, setEditing] = useState(false);
     const { register, handleSubmit, errors } = useForm(); 
     const [id] = useState(`${props.ticket.id}`)
@@ -16,7 +14,7 @@ const TicketItem = props => {
     }
 
     const toggleDelete = () => {
-        dispatch(deleteTicket(id, ()=>history.push('/dashboard')));
+        dispatch(deleteTicket(id));
     }
 
     const onSubmit = data => {

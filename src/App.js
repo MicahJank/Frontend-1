@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useStore } from 'react-redux';
 import PrivateRoute from './utils/PrivateRoute';
 import HomePage from './components/HomePage';
 import LoginPage from './components/LoginPage';
@@ -14,8 +14,8 @@ function App() {
   const userType = useSelector(state => state.LoginReducer.userType);
   //console.log("the usertype is", userType);
 
-  //const store = useStore();
-  //console.log('The store have states', store.getState().LoginReducer);
+  const store = useStore();
+  console.log('The store have states', store.getState().TicketsReducer);
 
   return (
     <main className="App">

@@ -7,13 +7,13 @@
 **/
 
 import React from 'react';
-import { useStore } from 'react-redux';
+//import { useStore } from 'react-redux';
 import { Link } from 'react-router-dom';
 import TicketList from './tickets/TicketList';
 
 function DashStudent() {
-  const store = useStore();
-  console.log('The store have states', store.getState().TicketsReducer);
+  //const store = useStore();
+  //console.log('The store have states', store.getState().TicketsReducer);
   
   return (
     <div>

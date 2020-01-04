@@ -4,11 +4,15 @@
 **/
 
 import React from 'react';
+import { Link } from 'react-router-dom';
+import HelperList from './helper/HelpList';
 
 function DashHelper() {
   return (
     <div>
-      <h1>HOME PAGE FOR A HELPER</h1>
+      <h1>Helper's home page goes here.</h1>
+      <Link to="/"><button>Go Back Home</button></Link>
+      <HelperList />
     </div>
   );
 }

@@ -15,7 +15,7 @@ const TicketList = () => {
     return (
         <div>
             {isLoading && <p>Loading...</p>}
-            {!isLoading && tickets && tickets.map(ticket => (
+            {!isLoading && tickets && tickets.sort((a, b) => Date.parse(b.updated_at) - Date.parse(a.updated_at)).map(ticket => (
                 <TicketItem ticket={ticket} key={ticket.id} />
             ))}
         </div>

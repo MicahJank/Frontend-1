@@ -4,6 +4,7 @@ import {
     TICKETS_FAILURE,
     TICKET_POST_SUCCESS,
     TICKET_PUT_SUCCESS,
+    TICKET_DELETE_SUCCESS
 } from '../actions';
 
 const initialState = {
@@ -32,7 +33,7 @@ const TicketsReducer = (state = initialState, action) => {
             console.log("Successfully posted a ticket");
             return {
                 ...state,
-                tickets: [...state.tickets, action.payload],
+                tickets: [action.payload, ...state.tickets],
                 isLoading: false
             }
         // This case handles put
@@ -40,6 +41,16 @@ const TicketsReducer = (state = initialState, action) => {
             console.log("Successfully edited a ticket");
             return {
                 ...state,
+                tickets: state.tickets.map(ticket => {
+                    return ticket.id === action.payload.id ? action.payload : ticket;
+                }),
+                isLoading: false
+            }
+        case TICKET_DELETE_SUCCESS:
+            console.log("Successfully deleted a ticket");
+            return {
+                ...state,
+                tickets: state.tickets.filter(ticket => action.payload !== ticket.id),
                 isLoading: false
             }
         case TICKETS_FAILURE:

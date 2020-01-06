@@ -23,12 +23,13 @@ const HelperList = () => {
         <div>
             <h2>Welcome to random places</h2>
             {tickets.map(ticket => {                
+                if (!ticket.status) {
                 return (
                     <HelpItem 
                         ticket={ticket} 
                         key={ticket.id} 
                     />
-                )   
+                )}  
             })}
         </div>
     )

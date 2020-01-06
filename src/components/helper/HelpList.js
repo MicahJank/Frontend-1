@@ -22,15 +22,17 @@ const HelperList = () => {
     return(
         <div>
             <h2>Welcome to random places</h2>
-            {tickets.map(ticket => {
-                <HelpItem 
-                    ticket={ticket} 
-                    key={ticket.id} 
-                />
-                })          
-            }
+            {tickets.map(ticket => {                
+                return (
+                    <HelpItem 
+                        ticket={ticket} 
+                        key={ticket.id} 
+                    />
+                )   
+            })}
         </div>
     )
 }
 
 export default HelperList;
+

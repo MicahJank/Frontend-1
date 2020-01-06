@@ -6,7 +6,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HelperList from './helper/HelperList';
-import CurrentHelpList from "./helper/CurrentHelpList"
+import CurrentHelpList from "./helper/CurrentHelpList";
 
 function DashHelper() {
   return (

@@ -18,20 +18,19 @@ function CurrentHelpList() {
     })
 }, [])
 
-return(
-  <div>
-      <h2>Welcome to Your Current Tickets!</h2>
-      {tickets.map(ticket => {                
-          if (ticket.helper_id === 1) {
-          return (
+  return(
+    <div>
+        <h2>Welcome to Your Current Tickets!</h2>
+        {tickets.map(ticket => {               
+            return (
               <CurrentHelpItem 
                   ticket={ticket} 
                   key={ticket.id} 
               />
-          )} 
-      })}
-  </div>
-)
+            )}
+        )}
+    </div>
+  )
 
 
 }

@@ -16,7 +16,7 @@ function HelpItem(props) {
       <h2>Ticket ID#: {props.ticket.id}</h2>
       <p>Name: {props.ticket.student_first_name}</p>
       <p>Email: {props.ticket.email}</p>
-      <p>Category: {props.ticket.category_id}</p>
+      <p>Category: {props.ticket.category}</p>
       <p>Description: {props.ticket.description}</p>
       <p>What I've Tried: {props.ticket.tried}</p>
       <p>Status: {status}</p>

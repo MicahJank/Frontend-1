@@ -9,9 +9,9 @@ const HelperList = () => {
 
     useEffect(() => {
         axiosWithAuth()
-        .get("/tickets")
+        .get("/tickets/open")
         .then(res => {
-            console.log("Getting response data", res.data);
+            console.log("HelperList - Getting response data", res.data);
             setTickets(res.data)
         })
         .catch(err => {

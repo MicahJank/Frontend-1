@@ -31,9 +31,6 @@ function CurrentHelpList() {
         )}
     </div>
   )
-
-
 }
-
 
 export default CurrentHelpList;

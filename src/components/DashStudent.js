@@ -10,6 +10,7 @@ import React from 'react';
 //import { useStore } from 'react-redux';
 import { Link } from 'react-router-dom';
 import TicketList from './tickets/TicketList';
+import StudentNavBar from './Navbar/StudentNavBar';
 
 function DashStudent() {
   //const store = useStore();
@@ -18,8 +19,7 @@ function DashStudent() {
   return (
     <div>
       <h1>Student's homepage goes here.</h1>
-      <Link to="/dashboard/post"><button>Post Ticket</button></Link>
-      <Link to="/"><button>Go Back Home</button></Link>
+      <StudentNavBar />
       <TicketList />
     </div>
   );

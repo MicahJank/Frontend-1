@@ -27,8 +27,8 @@ function CurrentHelpList() {
                   ticket={ticket} 
                   key={ticket.id} 
               />
-            )}
-        )}
+            )})
+        }
     </div>
   )
 }

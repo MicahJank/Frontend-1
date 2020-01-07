@@ -21,14 +21,16 @@ function HelperApp() {
         <Link to="/"><button>Go Back Home</button></Link>
       </div>
 
-      <Switch>
-        <PrivateRoute to="/dashboard/tickets">
-          <HelperList />
-        </PrivateRoute>
-        <PrivateRoute to="/dashboard">
-          <CurrentHelpList /> 
-        </PrivateRoute>
-      </Switch>  
+      <div>   
+        <Switch>
+          <PrivateRoute path="/tickets">
+            <HelperList />
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard">
+            <CurrentHelpList /> 
+          </PrivateRoute>
+        </Switch>  
+      </div>
 
 
 

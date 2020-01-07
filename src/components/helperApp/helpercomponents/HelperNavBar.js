@@ -7,7 +7,7 @@ function HelperNavBar() {
       <nav>
         <div className="nav-links">
           <NavLink to="/dashboard">Dashboard</NavLink>
-          <NavLink to="/dashboard/tickets">Ticket Pool</NavLink>
+          <NavLink to="/tickets">Ticket Pool</NavLink>
           <button>Log Out</button>  
         </div>
       </nav>    

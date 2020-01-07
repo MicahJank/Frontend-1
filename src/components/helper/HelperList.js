@@ -21,9 +21,8 @@ const HelperList = () => {
     }, [])
 
     return(
-        <BackGroundDiv>
-            <h2>Welcome to random places</h2>
-            <GridDiv>
+        <BackGroundDiv> 
+            <GridDiv>            
                 {tickets.map(ticket => {                
                     if (!ticket.status) {
                     return (
@@ -32,8 +31,9 @@ const HelperList = () => {
                             key={ticket.id} 
                         />
                     )} 
-                })}
+                })} 
             </GridDiv>
+           
         </BackGroundDiv>
     )
 }

@@ -9,19 +9,19 @@ function TicketForm() {
     const dispatch = useDispatch();
     const history = useHistory();
     const { register, handleSubmit, errors } = useForm(); 
-    const [ categories, setCategories] = useState([])
+    const [ categories, setCategories ] = useState([])
 
     useEffect(() => {
         axiosWithAuth()
         .get("/categories")
         .then(res => {
-            console.log(`caetgories`, res.data);
+            console.log(`categories`, res.data);
             setCategories(res.data)
         })
         .catch(err => {
             console.log(`error`, err);
         })
-    })
+    }, [])
 
     const onSubmit = data => {
         console.log("Starting to submit a ticket", data);

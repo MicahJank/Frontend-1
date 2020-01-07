@@ -4,16 +4,21 @@
 **/
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 
 import HelperNavBar from './Navbar/HelperNavBar';
 import HelperList from './helper/HelperList';
 
+import { TopDiv, PageTitle } from "../HelperStyle"
+
 function DashHelperTickets() {
   return (
     <div>
-      <h1>Helper's home page goes here.</h1>
-      <Link to="/"><button>Go Back Home</button></Link>
+      <TopDiv>
+        <PageTitle>Ticket Pool
+        </PageTitle>        
+      </TopDiv>
+      
       <HelperNavBar />
       <HelperList />
     </div>

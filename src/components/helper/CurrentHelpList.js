@@ -3,6 +3,8 @@ import axiosWithAuth from '../../utils/axiosWithAuth';
 
 import CurrentHelpItem from "./CurrentHelpItem";
 
+import { BackGroundDiv, GridDiv } from "../../HelperStyle";
+
 function CurrentHelpList() {
   const [tickets, setTickets] = useState([])
 
@@ -19,17 +21,19 @@ function CurrentHelpList() {
 }, [])
 
   return(
-    <div>
-        <h2>Welcome to Your Current Tickets!</h2>
+    <BackGroundDiv>
+    
         {tickets.map(ticket => {               
             return (
-              <CurrentHelpItem 
-                  ticket={ticket} 
-                  key={ticket.id} 
-              />
+              <GridDiv>
+                <CurrentHelpItem 
+                    ticket={ticket} 
+                    key={ticket.id} 
+                />
+              </GridDiv>
             )}
-        )}
-    </div>
+        )}        
+    </BackGroundDiv>
   )
 }
 

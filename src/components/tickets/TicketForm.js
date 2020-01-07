@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory, Link } from 'react-router-dom';
 import useForm from 'react-hook-form';
 import { postTicket } from '../../actions/TicketsAction';
+import axiosWithAuth from '../../utils/axiosWithAuth';
 
 function TicketForm() {
     const dispatch = useDispatch();
     const history = useHistory();
     const { register, handleSubmit, errors } = useForm(); 
+    const [ categories, setCategories] = useState([])
+
+    useEffect(() => {
+        axiosWithAuth()
+        .get("/categories")
+        .then(res => {
+            console.log(`caetgories`, res.data);
+            setCategories(res.data)
+        })
+        .catch(err => {
+            console.log(`error`, err);
+        })
+    })
 
     const onSubmit = data => {
         console.log("Starting to submit a ticket", data);
@@ -29,9 +43,7 @@ function TicketForm() {
                 {/* Submitting a ticket: Category */}
                 <label className="form-label">Category</label>
                 <select name="category_id" ref={register({ required: true })}>
-                    <option value="1">Applied Javascript</option>
-                    <option value="2">Intro to React</option>
-                    <option value="3">HTML Fundamentals</option>
+                    {categories.map(category => <option value={category.id}>{category.name}</option>)}
                 </select>
                 {errors.category && <p className="form-p">Please select a category!</p>}
                 {/* Submitting a ticket: Description */}

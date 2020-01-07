@@ -6,9 +6,7 @@ import HomePage from './components/HomePage';
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import DashStudent from './components/DashStudent';
-import DashHelper from './components/DashHelper';
-import DashStudentTickets from './components/DashStudentTickets';
-import DashHelperTickets from './components/DashHelperTickets';
+import HelperApp from './components/helperApp/HelperApp';
 import TicketForm from './components/tickets/TicketForm';
 import './App.css';
 
@@ -34,23 +32,11 @@ function App() {
           case "Student": 
             return <DashStudent />
           case "Helper": 
-            return <DashHelper />
+            return <HelperApp />
           default: 
             return null;
         }
-      }} />
-
-      <PrivateRoute exact path="/dashboard/tickets" component={() => {
-        switch(userType) {
-          case "Student": 
-            return <DashStudentTickets />
-          case "Helper": 
-            return <DashHelperTickets />
-          default: 
-            return null;
-        }
-      }} />
-
+      }} />    
       <PrivateRoute exact path="/dashboard/post" component={TicketForm} />
     </main>
   );

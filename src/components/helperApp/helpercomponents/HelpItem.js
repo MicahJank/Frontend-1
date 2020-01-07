@@ -20,7 +20,7 @@ function HelpItem(props) {
       <p>Description: {props.ticket.description}</p>
       <p>What I've Tried: {props.ticket.tried}</p>
       <p>Status: {status}</p>
-      <button>Accepted</button>
+      <button>Accept</button>
     </div>
   )
 }

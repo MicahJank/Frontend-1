@@ -23,7 +23,7 @@ function HelperApp() {
 
       <div>   
         <Switch>
-          <PrivateRoute path="/tickets">
+          <PrivateRoute path="/dashboard/tickets">
             <HelperList />
           </PrivateRoute>
           <PrivateRoute path="/dashboard">

@@ -27,7 +27,7 @@ function App() {
         Extra user type cases: what if back end adds an extra user type 
         which is not reflected in front end? Null is not a default type here
       */}
-      <PrivateRoute exact path="/dashboard" component={() => {
+      <PrivateRoute path="/dashboard" component={() => {
         switch(userType) {
           case "Student": 
             return <DashStudent />

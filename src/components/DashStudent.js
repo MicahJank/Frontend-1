@@ -8,7 +8,6 @@
 
 import React from 'react';
 //import { useStore } from 'react-redux';
-import { Link } from 'react-router-dom';
 import TicketList from './tickets/TicketList';
 import StudentNavBar from './Navbar/StudentNavBar';
 

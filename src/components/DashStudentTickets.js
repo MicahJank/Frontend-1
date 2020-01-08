@@ -7,7 +7,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import StudentNavBar from './Navbar/HelperNavBar';
-import HelperList from './helper/HelperList';
+import HelperList2 from './helper/HelperList2';
 
 function DashStudentTickets() {
   return (
@@ -16,7 +16,7 @@ function DashStudentTickets() {
       <Link to="/"><button>Go Back Home</button></Link>
       <StudentNavBar />
       
-      <HelperList />
+      <HelperList2 />
     </div>
   );
 }

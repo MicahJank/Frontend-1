@@ -4,16 +4,18 @@
 **/
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import HelperNavBar from './Navbar/HelperNavBar';
 import CurrentHelpList from "./helper/CurrentHelpList";
 
+import { TopDiv, PageTitle } from "../HelperStyle"
+
 function DashHelper() {
   return (
     <div>
-      <h1>Helper's DashBoard</h1>
-      <Link to="/"><button>Go Back Home</button></Link>
+      <TopDiv>
+        <PageTitle>DashBoard</PageTitle>
+      </TopDiv>      
       <HelperNavBar />
       <CurrentHelpList />      
     </div>

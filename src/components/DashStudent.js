@@ -11,6 +11,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import TicketList from './tickets/TicketList';
 import StudentNavBar from './Navbar/StudentNavBar';
+import styled from 'styled-components';
+
+const TicketListWrapper = styled.div`
+
+  margin-left: 200px;
+
+`;
+
+const H1 = styled.h1`
+
+  margin-left: 200px;
+
+`;
 
 function DashStudent() {
   //const store = useStore();
@@ -18,9 +31,11 @@ function DashStudent() {
   
   return (
     <div>
-      <h1>Student's homepage goes here.</h1>
       <StudentNavBar />
-      <TicketList />
+      <H1>Student's homepage goes here.</H1>
+      <TicketListWrapper>
+        <TicketList />
+      </TicketListWrapper>
     </div>
   );
 }

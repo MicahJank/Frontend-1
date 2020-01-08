@@ -8,6 +8,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import useForm from 'react-hook-form';
 import { userLogin } from '../actions/LoginAction';
+import {MainContainer,H1Wrapper,H2Wrapper,H2Link,FormBody,FocusSpan,InputWrap,Input,ErrorP,SubmitBtn,HomeBtn} from './LoginStyle';
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -18,31 +19,43 @@ function LoginPage() {
   }
 
   return (
-    <div className="form-body">
-      <h1 className="form-h1">Login Page</h1>
-      <form onSubmit={handleSubmit(onSubmit)} className="form">
-        <label className="form-label">Email</label>
-        <input 
-          name="email" 
-          ref={register({ required: true })} 
-          className="form-input"
-        />
-        {errors.email && <p className="form-p">You need a proper email to login!</p>}
-        {/*
-          To Do: Add specific requirements for password
-        */}
-        <label className="form-label">Password</label>
-        <input 
-          name="password"
-          type="password"
-          ref={register({ required: true })}
-          className="form-input"
-        />
-        {errors.password && <p className="form-p">You need a password to login!</p>}
-        <input type="submit" />
-      </form>
-      <Link to="/"><button>Go Back Home</button></Link>
-    </div>
+    <MainContainer>
+        <H2Wrapper><H2Link href="/">DevDesk Queue</H2Link></H2Wrapper>
+        <FormBody>
+          <H1Wrapper className="form-h1">Login</H1Wrapper>
+          <form onSubmit={handleSubmit(onSubmit)} className="form">
+            <InputWrap>
+              <Input 
+                name="email" 
+                ref={register({ required: true })} 
+                className="form-input"
+                placeholder="Email"
+              />
+              <FocusSpan/>
+            </InputWrap>
+            {errors.email && <ErrorP>You need a proper email to login!</ErrorP>}
+              {/*
+                To Do: Add specific requirements for password
+              */}
+            
+            {/*<label className="form-label">Password</label>*/}
+            <InputWrap>
+            <Input 
+              name="password"
+              type="password"
+              ref={register({ required: true })}
+              className="form-input"
+              placeholder="Password"
+            />
+            </InputWrap>
+            {errors.password && <ErrorP>You need a password to login!</ErrorP>}
+            <SubmitBtn type="submit"  />
+
+          </form>
+          <Link to="/"><HomeBtn>Go Back Home</HomeBtn></Link>
+        </FormBody>
+    </MainContainer>
+    
   );
 }
 

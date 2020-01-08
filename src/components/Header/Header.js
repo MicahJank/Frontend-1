@@ -1,10 +1,11 @@
 import React from "react";
-import { HeaderDiv, PageTitle } from "../../Style/AppStyle";
+import { HeaderDiv, LogoDiv, PageTitle } from "../../Style/AppStyle";
+import "../../img/logo.png"
 
 function Header() {
   return (
     <HeaderDiv>
-      <img src="../../img/logo.png" alt="LOGO" />
+      <LogoDiv></LogoDiv>
       <PageTitle>MAKE DYNAMIC!!!!!</PageTitle>        
     </HeaderDiv>
   )

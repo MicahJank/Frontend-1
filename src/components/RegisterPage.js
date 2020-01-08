@@ -27,7 +27,7 @@ function RegisterPage() {
     <MainContainer>
       <H2Wrapper><H2Link href="/">DevDesk Queue</H2Link></H2Wrapper>
       <FormBody>
-        <H1Wrapper>Register Page</H1Wrapper>
+        <H1Wrapper>Register</H1Wrapper>
         <form onSubmit={handleSubmit(onSubmit)} className="form">
           <RoleLabel className="form-label">Role</RoleLabel>
           <Select name="role_id" ref={register}>

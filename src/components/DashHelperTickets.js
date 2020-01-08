@@ -7,17 +7,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import HelperNavBar from './Navbar/HelperNavBar';
-import CurrentHelpList from "./helper/CurrentHelpList";
+import HelperList from './helper/HelperList';
 
-function DashHelper() {
+function DashHelperTickets() {
   return (
     <div>
-      <h1>Helper's DashBoard</h1>
+      <h1>Helper's home page goes here.</h1>
       <Link to="/"><button>Go Back Home</button></Link>
       <HelperNavBar />
-      <CurrentHelpList />      
+      <HelperList />
     </div>
   );
 }
 
-export default DashHelper;
+export default DashHelperTickets;
+

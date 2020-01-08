@@ -1,22 +1,20 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
+import {MainContainer,NavLinks,StyledBtn,Nav} from './StudentNavStyle';
 
 
 function StudentNavBar() {
   return (
-    <div>
-      <nav>
+    <MainContainer>
+      <Nav>
         <div className="nav-links">
-          <NavLink to="/dashboard">Dashboard</NavLink>
-          <NavLink to="/dashboard/tickets">Ticket Pool</NavLink>
-
-          <NavLink to="/dashboard/post"><button>Post Ticket</button></NavLink>
-          <NavLink to="/"><button>Go Back Home</button></NavLink>
-
-          <button>Log Out</button>  
+          <NavLinks href="/dashboard">Dashboard</NavLinks>
+          <NavLinks  href="/dashboard/post">Create Help Ticket</NavLinks>
+          <NavLinks  href="/dashboard/tickets">OpenTickets</NavLinks>
+          <StyledBtn>Log Out</StyledBtn>  
         </div>
-      </nav>    
-    </div>
+      </Nav>    
+    </MainContainer>
   );
 }
 

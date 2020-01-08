@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axiosWithAuth from '../../utils/axiosWithAuth';
 
+import { BackGroundDiv, GridDiv } from "../../HelperStyle";
 import HelpItem from "./HelpItem";
 
 
@@ -20,18 +21,19 @@ const HelperList = () => {
     }, [])
 
     return(
-        <div>
-            <h2>Welcome to random places</h2>
-            {tickets.map(ticket => {                
-                if (!ticket.status) {
-                return (
-                    <HelpItem 
-                        ticket={ticket} 
-                        key={ticket.id} 
-                    />
-                )}  
-            })}
-        </div>
+        <BackGroundDiv> 
+            <GridDiv>            
+                {tickets.map(ticket => {                
+                    if (!ticket.status) {
+                    return (
+                        <HelpItem 
+                            ticket={ticket} 
+                            key={ticket.id} 
+                        />
+                    )} 
+                })} 
+            </GridDiv>
+        </BackGroundDiv>
     )
 }
 

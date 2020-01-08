@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axiosWithAuth from '../../utils/axiosWithAuth';
-
 import CurrentHelpItem from "./CurrentHelpItem";
+import { BackGroundDiv, GridDiv } from "../../HelperStyle";
 
 function CurrentHelpList() {
-  const [tickets, setTickets] = useState([])
+  const [tickets, setTickets] = useState([]);
 
   useEffect(() => {
     axiosWithAuth()
@@ -16,21 +16,22 @@ function CurrentHelpList() {
     .catch(err => {
         console.log("Getting CURRENT HELP LIST response data", err);
     })
-}, [])
+}, []);
 
   return(
-    <div>
-        <h2>Welcome to Your Current Tickets!</h2>
+    <BackGroundDiv>
+      <GridDiv>
         {tickets.map(ticket => {               
-            return (
-              <CurrentHelpItem 
-                  ticket={ticket} 
-                  key={ticket.id} 
-              />
-            )}
-        )}
-    </div>
-  )
+          return (
+            <CurrentHelpItem 
+                ticket={ticket} 
+                key={ticket.id} 
+            />
+          )}
+        )};  
+      </GridDiv>      
+    </BackGroundDiv>
+  );
 }
 
 export default CurrentHelpList;

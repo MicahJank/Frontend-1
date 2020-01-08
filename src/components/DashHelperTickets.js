@@ -15,10 +15,8 @@ function DashHelperTickets() {
   return (
     <div>
       <TopDiv>
-        <PageTitle>Ticket Pool
-        </PageTitle>        
-      </TopDiv>
-      
+        <PageTitle>Ticket Pool</PageTitle>        
+      </TopDiv>      
       <HelperNavBar />
       <HelperList />
     </div>

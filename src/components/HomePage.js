@@ -71,9 +71,11 @@ const Btn = styled.button`
 const H2 = styled.h2`
 
   color:white;
-  font-size: 1.8rem;
-  width:60%;
+  font-size: 3.1rem;
+  width:100%;
   text-align: center;
+  font-family:Trebuchet MS;
+  margin-left: -20%;
 
 `;
 
@@ -82,10 +84,9 @@ const H3 = styled.h3`
   color: white;
   width: 60%;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   padding-bottom: 5%;
-  padding-top: 5%;
-
+  font-family:Trebuchet MS;
 
 `;
 
@@ -101,7 +102,7 @@ function HomePage() {
         <CTAContainer> 
           <CTAContent>
             <H2>DevDesk Solution Provider</H2>
-            <H3>Are you having an issue's on your project and have spent at least 20 minutes trying to resolve the issue on your own?</H3>
+            <H3>Are you having an issue's on your project and can not resolve the issue on your own?</H3>
             <Link to="/login"><Btn>Login</Btn></Link>
             <br />
             <br />

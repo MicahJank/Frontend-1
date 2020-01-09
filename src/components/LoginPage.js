@@ -49,7 +49,7 @@ function LoginPage() {
             />
             </InputWrap>
             {errors.password && <ErrorP>You need a password to login!</ErrorP>}
-            <SubmitBtn type="submit"  />
+            <SubmitBtn type="submit" name="Login" />
 
           </form>
           <br/>

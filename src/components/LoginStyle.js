@@ -5,6 +5,7 @@ export const H2Wrapper = styled.h2`
   text-decoration:none;
   color: #B91432;
   padding-left:4%;
+  font-size: 2.0rem;
 
 `;
 

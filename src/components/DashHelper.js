@@ -10,7 +10,7 @@ import CurrentHelpList from "./helper/CurrentHelpList";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 
-import { ContainerDiv } from "../Style/AppStyle"
+import { ContainerDiv } from "../Style/HelperAppStyle"
 
 function DashHelper() {
   return (

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axiosWithAuth from '../../utils/axiosWithAuth';
+
 import CurrentHelpItem from "./CurrentHelpItem";
 
-import { ContentDiv} from "../../Style/AppStyle"
-import { GridDiv } from "../../Style/HelperStyle";
+import { ContentDiv} from "../../Style/HelperAppStyle"
+import { GridDiv } from "../../Style/ContentStyle";
 
 function CurrentHelpList() {
   const [tickets, setTickets] = useState([]);

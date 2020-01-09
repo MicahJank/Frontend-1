@@ -1,5 +1,5 @@
 import React from 'react';
-import { MenuDiv, MenuNav, NavLinks } from "../../Style/AppStyle";
+import { MenuDiv, MenuNav, NavLinks, StyledBtn } from "../../Style/HelperAppStyle";
 import { useHistory } from "react-router-dom";
 
 function HelperNavBar() {
@@ -17,7 +17,7 @@ function HelperNavBar() {
         <NavLinks href="/dashboard/tickets">
           Ticket Pool
         </NavLinks>
-        <button onClick={()=>logout()}>Log Out</button>
+        <StyledBtn onClick={()=>logout()}>Log Out</StyledBtn>
       </MenuNav>    
     </MenuDiv>
   );

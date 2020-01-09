@@ -1,6 +1,8 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import {MainContainer,NavLinks,StyledBtn,Nav} from './StudentNavStyle';
+
+import { MenuDiv, MenuNav, NavLinks, StyledBtn} from "../../Style/StudentAppStyle";
+
 
 
 function StudentNavBar() {
@@ -12,16 +14,14 @@ function StudentNavBar() {
   }
 
   return (
-    <MainContainer>
-      <Nav>
-        <div className="nav-links">
+    <MenuDiv>
+      <MenuNav>
           <NavLinks href="/dashboard">Dashboard</NavLinks>
-          <NavLinks  href="/dashboard/post">Create Help Ticket</NavLinks>
-          <NavLinks  href="/dashboard/tickets">OpenTickets</NavLinks>
+          <NavLinks  href="/dashboard/tickets">Open Tickets</NavLinks>
+          <NavLinks  href="/dashboard/post">New Ticket</NavLinks>          
           <StyledBtn onClick={()=>logout()}>Log Out</StyledBtn>  
-        </div>
-      </Nav>    
-    </MainContainer>
+      </MenuNav>    
+    </MenuDiv>
   );
 }
 

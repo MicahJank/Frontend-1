@@ -4,20 +4,22 @@
 **/
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import StudentNavBar from './Navbar/HelperNavBar';
-import HelperList2 from './helper/HelperList2';
+import Header from "./Header/Header";
+import StudentNavBar from './Navbar/StudentNavBar';
+import StudentList from './student/StudentList';
+import Footer from "./Footer/Footer";
+
+import { ContainerDiv } from "../Style/StudentAppStyle"
 
 function DashStudentTickets() {
   return (
-    <div>
-      <h1>Student's home page goes here.</h1>
-      <Link to="/"><button>Go Back Home</button></Link>
+    <ContainerDiv>
+      <Header />
       <StudentNavBar />
-      
-      <HelperList2 />
-    </div>
+      <StudentList />
+      <Footer />
+    </ContainerDiv>
   );
 }
 

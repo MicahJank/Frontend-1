@@ -1,5 +1,5 @@
 import React from "react";
-import { HeaderDiv, PageTitle, HeaderSubDiv1, HeaderSubDiv2, LogoImg, NavLinks } from "../../Style/AppStyle";
+import { HeaderDiv, PageTitle, HeaderSubDiv1, HeaderSubDiv2, LogoImg, NavLinks } from "../../Style/HelperAppStyle";
 
 import LogoImage from "../../images/logo-trans.png";
 

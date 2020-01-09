@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import axiosWithAuth from '../../utils/axiosWithAuth';
-import HelpItem from "./HelpItem";
 
-import { ContentDiv } from "../../Style/HelperAppStyle"
+import { ContentDiv } from "../../Style/StudentAppStyle";
 import { GridDiv } from "../../Style/ContentStyle";
+import HelpItem2 from "./StudentItem";
 
 
-
-const HelperList = () => {
+const StudentList = () => {
     const [tickets, setTickets] = useState([])
 
     useEffect(() => {
         axiosWithAuth()
         .get("/tickets/open")
         .then(res => {
-            console.log("HelperList - Getting response data", res.data);
+            console.log("StudentList - Getting response data", res.data);
             setTickets(res.data)
         })
         .catch(err => {
@@ -25,11 +24,11 @@ const HelperList = () => {
     return(
         <ContentDiv>
             <GridDiv>            
-                {tickets.map(ticket => {
+                {tickets.map(ticket => {       
                     if (!ticket.status) {
                     return (
-                        <HelpItem 
-                            ticket={ticket} 
+                        <HelpItem2 
+                            ticket={ticket}
                             key={ticket.id} 
                         />
                     )} 
@@ -38,6 +37,5 @@ const HelperList = () => {
         </ContentDiv>
     )
 }
-
-export default HelperList;
+export default StudentList;
 

@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import useForm from 'react-hook-form';
 import { editTicket, deleteTicket } from '../../actions/TicketsAction';
+import { TicketCard } from "../../Style/ContentStyle"
+import axiosWithAuth from '../../utils/axiosWithAuth';
 
 const TicketItem = props => {
     const dispatch = useDispatch();
@@ -23,11 +25,27 @@ const TicketItem = props => {
         toggleEdit();
     }
 
+    const [ categories, setCategories ] = useState([])
+
+    useEffect(() => {
+        axiosWithAuth()
+        .get("/categories")
+        .then(res => {
+            console.log(`categories`, res.data);
+            setCategories(res.data)
+        })
+        .catch(err => {
+            console.log(`error`, err);
+        })
+    }, [])
+
     return (
-        <div>
+        <TicketCard>
             {!editing ? 
-                <div style={{display: "flex", flexDirection: "column", justifyContent: "center", marginBottom: "5px", border: "1px solid red", width: "60%"}}>
+                <div>
                     <h3>{props.ticket.title}</h3>
+                    <h3>Category:</h3>
+                    <p>{props.ticket.category}</p>
                     <h5>{props.ticket.tried}</h5>
                     <p>{props.ticket.description}</p>
                     <div>
@@ -48,10 +66,8 @@ const TicketItem = props => {
                         {errors.title && <p className="form-p">A title is required!</p>}
                         {/* Submitting a ticket: Category */}
                         <label>Category</label>
-                        <select name="category_id" ref={register({ required: true })} defaultValue={props.ticket.category_id}>
-                            <option value="1">Applied Javascript</option>
-                            <option value="2">Intro to React</option>
-                            <option value="3">HTML Fundamentals</option>
+                        <select name="category_id" ref={register({ required: true })}>
+                            {categories.map(category => <option value={category.id}>{category.name}</option>)}
                         </select>
                         {errors.category && <p className="form-p">Please select a category!</p>}
                         {/* Submitting a ticket: Description */}
@@ -75,7 +91,7 @@ const TicketItem = props => {
                     </form>
                 </div>
             }
-        </div>
+        </TicketCard>
     )
 }
 

@@ -72,7 +72,6 @@ export const NavLinks = styled.a`
 // Display Content (Div 3)
 export const ContentDiv = styled.div`
   grid-column: 3 / -1;
-
 `;
 
 // Footer (Div4)
@@ -87,4 +86,16 @@ export const FooterA = styled.a`
   line-height: 4rem;
   color: #FEFEFE;
   margin: 0 5%;
+`;
+
+
+export const StyledBtn = styled.button`
+
+  border: none;
+  background-color: white;
+  color: #E6A522;
+  font-size: 1rem;
+  margin-left: 6%;
+  margin-top: 2%;
+
 `;

@@ -66,12 +66,22 @@ function RegisterPage() {
             <Input 
               name="password"
               type="password"
-              ref={register({ required: true })}
+              ref={register({ 
+                required: true,
+                minLength: {
+                  value: 6,
+                  message: "Password too short!"
+                },
+                pattern: {
+                  value: /[A-Z]{1,12}[0-9]{1,12}[`~!@#$%^&*()_=<+>?=/.,]{1,12}$/i,
+                  message: "Password must have at least 6 characters, including at least 1 letter, 1 digit, and 1 special character."
+                }
+              })}
               className="form-input"
               placeholder="Password"
             />
           </InputWrap>
-          {errors.password && <ErrorP>You need a password to login!</ErrorP>}
+          {errors.password && <ErrorP>{errors.password.message}</ErrorP>}
           <SubmitBtn type="submit" value="Register Now!" />
         </form>
         <Link to="/"><HomeBtn>Go Back Home</HomeBtn></Link>

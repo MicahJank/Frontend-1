@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+// styling for tickets diplayed in content div (grid div 3/4)
+
 export const GridDiv = styled.div`
   background-color: #FBFCFD;
   display: grid;

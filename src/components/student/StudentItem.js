@@ -1,6 +1,6 @@
 import React from "react";
-import { TicketCard } from "../../Style/HelperStyle"
-function HelpItem(props) {
+import { TicketCard } from "../../Style/ContentStyle"
+function StudentItem(props) {
   
   return (
     <TicketCard>
@@ -13,4 +13,4 @@ function HelpItem(props) {
   )
 }
 
-export default HelpItem
+export default StudentItem

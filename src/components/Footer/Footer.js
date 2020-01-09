@@ -1,5 +1,5 @@
 import React from "react";
-import { FooterDiv, FooterA} from "../../Style/AppStyle";
+import { FooterDiv, FooterA} from "../../Style/HelperAppStyle";
 
 function Footer() {
   return (

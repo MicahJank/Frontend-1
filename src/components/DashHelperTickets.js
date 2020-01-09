@@ -5,12 +5,12 @@
 
 import React from 'react';
 
+import Header from "./Header/Header"
 import HelperNavBar from './Navbar/HelperNavBar';
 import HelperList from './helper/HelperList';
-import Header from "./Header/Header"
 import Footer from "./Footer/Footer";
 
-import { ContainerDiv } from "../Style/AppStyle"
+import { ContainerDiv } from "../Style/HelperAppStyle"
 
 function DashHelperTickets() {
   return (

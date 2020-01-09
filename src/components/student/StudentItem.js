@@ -1,15 +1,7 @@
 import React from "react";
-import { TicketCard } from "../../Style/ContentStyle";
-
-function HelpItem(props) {
+import { TicketCard } from "../../Style/ContentStyle"
+function StudentItem(props) {
   
-  let status 
-    if(props.resolved) {
-      status = "resolved"
-      } else {
-      status = "Not Resolved"
-    }
- 
   return (
     <TicketCard>
       <h2>#{props.ticket.id}</h2>
@@ -17,10 +9,8 @@ function HelpItem(props) {
       <h4>Category: {props.ticket.category}</h4>
       <p>Description: {props.ticket.description}</p>
       <p>What I've Tried: {props.ticket.tried}</p>
-      <h5>Status: {status}</h5>
-      <button>Accept</button>
     </TicketCard>
   )
 }
 
-export default HelpItem
+export default StudentItem

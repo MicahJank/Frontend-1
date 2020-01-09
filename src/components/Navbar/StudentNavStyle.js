@@ -18,7 +18,7 @@ export const Nav = styled.nav`
 
 export const MainContainer = styled.div`
 
-  margin-right:190px;
+  margin-right: 190px;
 
 `;
 
@@ -34,11 +34,11 @@ export const NavLinks = styled.a`
 
 export const StyledBtn = styled.button`
 
-  border:none;
-  background-color:white;
+  border: none;
+  background-color: white;
   color: #E6A522;
-  font-size:1rem;
-  margin-left:6%;
-  margin-top:2%;
+  font-size: 1rem;
+  margin-left: 6%;
+  margin-top: 2%;
 
 `;

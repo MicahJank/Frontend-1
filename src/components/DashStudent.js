@@ -8,34 +8,25 @@
 
 import React from 'react';
 //import { useStore } from 'react-redux';
+
+import Header from "./Header/Header";
 import TicketList from './tickets/TicketList';
 import StudentNavBar from './Navbar/StudentNavBar';
-import styled from 'styled-components';
+import Footer from "./Footer/Footer";
 
-const TicketListWrapper = styled.div`
-
-  margin-left: 200px;
-
-`;
-
-const H1 = styled.h1`
-
-  margin-left: 200px;
-
-`;
+import { ContainerDiv } from "../Style/StudentAppStyle";
 
 function DashStudent() {
   //const store = useStore();
   //console.log('The store have states', store.getState().TicketsReducer);
   
   return (
-    <div>
+    <ContainerDiv>
+      <Header />
       <StudentNavBar />
-      <H1>Student's homepage goes here.</H1>
-      <TicketListWrapper>
-        <TicketList />
-      </TicketListWrapper>
-    </div>
+      <TicketList />
+      <Footer />
+    </ContainerDiv>
   );
 }
 

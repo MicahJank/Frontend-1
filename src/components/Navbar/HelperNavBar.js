@@ -1,17 +1,16 @@
 import React from 'react';
-import { Link, NavLink } from "react-router-dom";
-import { MenuDiv, MenuNav, NavLinkS } from "../../Style/AppStyle"
+import { MenuDiv, MenuNav, NavLinks } from "../../Style/AppStyle";
 
 function HelperNavBar() {
   return (
     <MenuDiv>
       <MenuNav>  
-        <NavLink to="/dashboard">Dashboard</NavLink>
-        <NavLink to="/dashboard/tickets">
+        <NavLinks href="/dashboard">Dashboard</NavLinks>
+        <NavLinks href="/dashboard/tickets">
           Ticket Pool
-        </NavLink>
-        <button>Log Out</button>
-        <Link to="/"><button>Go Back Home</button></Link>
+        </NavLinks>
+        <NavLinks>Log Out</NavLinks>
+        <NavLinks to="/">Go Back Home</NavLinks>
       </MenuNav>    
     </MenuDiv>
   );

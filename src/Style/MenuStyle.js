@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 
 export const MenuNav = styled.nav`
   display: flex;
@@ -8,5 +7,4 @@ export const MenuNav = styled.nav`
   align-content: center;
   border: 1px solid black;
 `;
-
 

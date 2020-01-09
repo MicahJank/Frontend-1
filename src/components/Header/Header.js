@@ -12,7 +12,7 @@ function Header() {
         </NavLinks>
       </HeaderSubDiv1>   
       <HeaderSubDiv2>
-        <PageTitle>MAKE DYNAMIC!!!!!</PageTitle> 
+        <PageTitle>DevDesk Queue</PageTitle> 
       </HeaderSubDiv2>       
     </HeaderDiv>
   )

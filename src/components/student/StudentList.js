@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axiosWithAuth from '../../utils/axiosWithAuth';
 
-import { ContentDiv } from "../../Style/StudentAppStyle";
+import { ContentDiv, H2 } from "../../Style/StudentAppStyle";
 import { GridDiv } from "../../Style/ContentStyle";
 import HelpItem2 from "./StudentItem";
 
@@ -23,6 +23,7 @@ const StudentList = () => {
 
     return(
         <ContentDiv>
+        <H2>Open Tickets</H2>
             <GridDiv>            
                 {tickets.map(ticket => {       
                     if (!ticket.status) {

@@ -14,7 +14,9 @@ import TicketList from './tickets/TicketList';
 import StudentNavBar from './Navbar/StudentNavBar';
 import Footer from "./Footer/Footer";
 
-import { ContainerDiv } from "../Style/StudentAppStyle";
+import { ContainerDiv, H2 } from "../Style/HelperAppStyle";
+
+
 
 function DashStudent() {
   //const store = useStore();

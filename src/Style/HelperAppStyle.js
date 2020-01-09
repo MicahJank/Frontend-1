@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 // Master Div with CSS Grid
 export const ContainerDiv = styled.div`
-  background-color: #423F40;
+  background-color: #B91432;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 2%;
@@ -13,23 +13,24 @@ export const ContainerDiv = styled.div`
 // Display Header/Top Div (Div 1)
 export const HeaderDiv = styled.div`
   grid-column: 1 / -1 ;
-  background-color: #333333;
+  background-color: white;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 `;
 
 export const HeaderSubDiv1 = styled.div`
   grid-column: 1 / 2 ;
-  background-color: white;
+  background-color: #423F40;
   maxwidth: 100%;
-  border: #333333 3px solid;
 `;
 
 export const HeaderSubDiv2 = styled.div`
   grid-column: 2 / -1 ;  
-  background-color: #333333;
+  background-color: #423F40;
   display: flex;
-  justify-content: center;
+  justify-content:left;
+  padding-top:.4%;
+  margin-left:-1%;
 `;
 
 // Logo
@@ -40,7 +41,7 @@ export const LogoImg = styled.img`
 
 export const PageTitle = styled.h1`
   line-height: 2rem;
-  color: #B91432;
+  color: white;
   text-align: center;
 `;
 
@@ -61,12 +62,12 @@ export const MenuNav = styled.nav`
 export const NavLinks = styled.a`
   text-decoration: none;
   font-size: 1.5rem;
-  color: #B91432;
+  color: white;
   display: block;
   margin 5%;
     &:hover {
       cursor: pointer;
-      color: white;
+      color: black;
     }
 `;
 
@@ -78,7 +79,7 @@ export const ContentDiv = styled.div`
 // Footer (Div4)
 export const FooterDiv = styled.div`
   grid-column: 1 / -1;  
-  background-color: #333333;
+  background-color: #423F40;
   display: flex;
   justify-content: center;
 `;
@@ -93,11 +94,25 @@ export const FooterA = styled.a`
 export const StyledBtn = styled.button`
 
   border: none;
-  width: 60%;
-  background-color: white;
-  color: #B91432;
+  background-color: #423F40;
+  color: white;
   font-size: 1rem;
-  margin-left: 6%;
   margin-top: 2%;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  margin-left: 5%;
+  padding: 5%;
+  width:50%;
+  box-shadow: 0px 10px 14px -7px #276873;
+	background:linear-gradient(to bottom, #423F40; 5%, #408c99 100%);
+  line-height:1.3rem;
+
+`;
+
+export const H2 = styled.h2`
+
+    color:white;
+    max-height:20%;
+    text-align:center;
 
 `;

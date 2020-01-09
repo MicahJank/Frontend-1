@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axiosWithAuth from '../../utils/axiosWithAuth';
 import HelpItem from "./HelpItem";
 
-import { ContentDiv } from "../../Style/HelperAppStyle"
+import { ContentDiv,H2 } from "../../Style/HelperAppStyle"
 import { GridDiv } from "../../Style/ContentStyle";
 
 
@@ -24,6 +24,7 @@ const HelperList = () => {
 
     return(
         <ContentDiv>
+            <H2> Ticket Pool </H2>
             <GridDiv>            
                 {tickets.map(ticket => {
                     if (!ticket.status) {

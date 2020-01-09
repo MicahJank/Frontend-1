@@ -1,5 +1,7 @@
 import React from "react";
 import { TicketCard } from "../../Style/ContentStyle";
+import styled from 'styled-components';
+import {ResolvedButton} from '../../Style/TicketFormStyle';
 
 function HelpItem(props) {
   
@@ -18,7 +20,7 @@ function HelpItem(props) {
       <p>Description: {props.ticket.description}</p>
       <p>What I've Tried: {props.ticket.tried}</p>
       <h5>Status: {status}</h5>
-      <button>Accept</button>
+      <ResolvedButton>Accept</ResolvedButton>
     </TicketCard>
   )
 }

@@ -1,5 +1,9 @@
 import React from "react";
-import { TicketCard } from "../../Style/ContentStyle"
+import { TicketCard } from "../../Style/ContentStyle";
+import styled from 'styled-components';
+import {ResolvedButton,ThrowButton,ButtonDiv} from '../../Style/TicketFormStyle';
+
+
 
 function HelpItem(props) {
   return (
@@ -9,8 +13,11 @@ function HelpItem(props) {
       <h4>Category: {props.ticket.category}</h4>
       <p>Description: {props.ticket.description}</p>
       <p>What I've Tried: {props.ticket.tried}</p>
-      <button>Resolved</button>
-      <button>Throw Back</button>
+      <ButtonDiv>
+        <ThrowButton>Throw Back</ThrowButton>
+        <ResolvedButton>Resolved</ResolvedButton>
+      </ButtonDiv>
+      
     </TicketCard>
   )
 }

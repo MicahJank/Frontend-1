@@ -4,6 +4,7 @@ import useForm from 'react-hook-form';
 import { editTicket, deleteTicket } from '../../actions/TicketsAction';
 import { TicketCard } from "../../Style/ContentStyle"
 import axiosWithAuth from '../../utils/axiosWithAuth';
+import {EditButton,DeleteButton,ButtonDiv} from '../../Style/TicketFormStyle';
 
 const TicketItem = props => {
     const dispatch = useDispatch();
@@ -43,15 +44,15 @@ const TicketItem = props => {
         <TicketCard>
             {!editing ? 
                 <div>
+                    <h2>#{props.ticket.id}</h2>
                     <h3>{props.ticket.title}</h3>
-                    <h3>Category:</h3>
-                    <p>{props.ticket.category}</p>
-                    <h5>{props.ticket.tried}</h5>
-                    <p>{props.ticket.description}</p>
-                    <div>
-                        <button onClick={()=>toggleEdit()}>Edit</button>
-                        <button onClick={()=>toggleDelete()}>Delete</button>
-                    </div>
+                    <h4>Category: {props.ticket.category}</h4>
+                    <p>Description: {props.ticket.description}</p>
+                    <p>What I've Tried: {props.ticket.tried}</p>
+                    <ButtonDiv>
+                        <EditButton onClick={()=>toggleEdit()}>Edit</EditButton>
+                        <DeleteButton  onClick={()=>toggleDelete()}>Delete</DeleteButton>
+                    </ButtonDiv>
                 </div> :
                 <div> 
                     <h1>Edit Ticket</h1>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 
-import { MenuDiv, MenuNav, NavLinks, StyledBtn} from "../../Style/StudentAppStyle";
+import { MenuDiv, MenuNav, NavLinks, StyledBtn} from "../../Style/HelperAppStyle";
 
 
 

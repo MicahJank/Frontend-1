@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, NavLink, useHistory } from "react-router-dom";
-import { MenuDiv, MenuNav } from "../../Style/AppStyle"
+import { MenuDiv, MenuNav, NavLinks } from "../../Style/AppStyle";
+import { useHistory } from "react-router-dom";
 
 function HelperNavBar() {
   const history = useHistory();
@@ -13,12 +13,11 @@ function HelperNavBar() {
   return (
     <MenuDiv>
       <MenuNav>  
-        <NavLink to="/dashboard">Dashboard</NavLink>
-        <NavLink to="/dashboard/tickets">
+        <NavLinks href="/dashboard">Dashboard</NavLinks>
+        <NavLinks href="/dashboard/tickets">
           Ticket Pool
-        </NavLink>
+        </NavLinks>
         <button onClick={()=>logout()}>Log Out</button>
-        <Link to="/"><button>Go Back Home</button></Link>
       </MenuNav>    
     </MenuDiv>
   );

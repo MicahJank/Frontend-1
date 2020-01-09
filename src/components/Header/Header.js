@@ -1,12 +1,19 @@
 import React from "react";
-import { HeaderDiv, LogoDiv, PageTitle } from "../../Style/AppStyle";
-import "../../img/logo.png"
+import { HeaderDiv, PageTitle, HeaderSubDiv1, HeaderSubDiv2, LogoImg, NavLinks } from "../../Style/AppStyle";
+
+import LogoImage from "../../images/logo-trans.png";
 
 function Header() {
   return (
     <HeaderDiv>
-      <LogoDiv></LogoDiv>
-      <PageTitle>MAKE DYNAMIC!!!!!</PageTitle>        
+      <HeaderSubDiv1>
+        <NavLinks href="https://lambdaschool.com/" target="__blank">
+          <LogoImg src={LogoImage}></LogoImg>
+        </NavLinks>
+      </HeaderSubDiv1>   
+      <HeaderSubDiv2>
+        <PageTitle>MAKE DYNAMIC!!!!!</PageTitle> 
+      </HeaderSubDiv2>       
     </HeaderDiv>
   )
 }

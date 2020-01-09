@@ -6,7 +6,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import img from '../img/homepage-splash.jpg';
+import img from '../images/homepage-splash.jpg';
 
 const MainContainer = styled.div`
 

@@ -26,7 +26,7 @@ export const HeaderSubDiv1 = styled.div`
 
 export const HeaderSubDiv2 = styled.div`
   grid-column: 2 / -1 ;  
-  background-color: #423F40;
+  background-color: white;
   display: flex;
   justify-content: center;
 `;
@@ -39,7 +39,7 @@ export const LogoImg = styled.img`
 
 export const PageTitle = styled.h1`
   line-height: 2rem;
-  color: #E6A522;
+  color: white;
   text-align: center;
 `;
 
@@ -60,12 +60,12 @@ export const MenuNav = styled.nav`
 export const NavLinks = styled.a`
   text-decoration: none;
   font-size: 1.5rem;
-  color: #E6A522;
+  color: white;
   display: block;
   margin 5%;
     &:hover {
       cursor: pointer;
-      color: white;
+      color: black;
     }
 `;
 
@@ -92,10 +92,19 @@ export const FooterA = styled.a`
 export const StyledBtn = styled.button`
 
   border: none;
-  background-color: white;
-  color: #E6A522;
+  background-color: #B91432;
+  color: white;
   font-size: 1rem;
-  margin-left: 6%;
   margin-top: 2%;
+  font-size: 1.5rem;
+
+
+`;
+
+export const H2 = styled.h2`
+
+    color:white;
+    max-height:20%;
+    text-align:center;
 
 `;

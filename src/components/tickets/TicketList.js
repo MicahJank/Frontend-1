@@ -5,7 +5,7 @@ import TicketItem from './TicketItem';
 
 
 
-import { ContentDiv } from "../../Style/HelperAppStyle";
+import { ContentDiv,H2 } from "../../Style/HelperAppStyle";
 import { GridDiv } from "../../Style/ContentStyle";
 
 const TicketList = () => {
@@ -19,6 +19,7 @@ const TicketList = () => {
 
     return (
         <ContentDiv>
+            <H2>Dashboard</H2>
             <GridDiv>
                 {isLoading && <p>Loading...</p>}
                 {!isLoading && tickets && tickets.sort((a, b) => Date.parse(b.updated_at) - Date.parse(a.updated_at)).map(ticket => (

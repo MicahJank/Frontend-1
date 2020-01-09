@@ -3,7 +3,7 @@ import axiosWithAuth from '../../utils/axiosWithAuth';
 
 import CurrentHelpItem from "./CurrentHelpItem";
 
-import { ContentDiv} from "../../Style/HelperAppStyle"
+import { ContentDiv,H2} from "../../Style/HelperAppStyle"
 import { GridDiv } from "../../Style/ContentStyle";
 
 function CurrentHelpList() {
@@ -23,6 +23,7 @@ function CurrentHelpList() {
 
   return(
     <ContentDiv>
+      <H2> Dashboard </H2>
       <GridDiv>
         {tickets.map(ticket => {         
           return (

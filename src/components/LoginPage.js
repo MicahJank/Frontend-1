@@ -52,6 +52,7 @@ function LoginPage() {
             <SubmitBtn type="submit"  />
 
           </form>
+          <br/>
           <Link to="/"><HomeBtn>Go Back Home</HomeBtn></Link>
         </FormBody>
     </MainContainer>

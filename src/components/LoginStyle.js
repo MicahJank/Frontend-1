@@ -38,7 +38,7 @@ export const Input = styled.input`
   line-height: 1.2;
   font-size: 20px;
   display: block;
-  width: 100%;
+  width: 85%;
   background:transparent;
   height: 62px;
   padding: 0 20px 0 38px;

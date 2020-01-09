@@ -5,21 +5,21 @@
 
 import React from 'react';
 
-
 import HelperNavBar from './Navbar/HelperNavBar';
 import HelperList from './helper/HelperList';
+import Header from "./Header/Header"
+import Footer from "./Footer/Footer";
 
-import { TopDiv, PageTitle } from "../HelperStyle"
+import { ContainerDiv } from "../Style/AppStyle"
 
 function DashHelperTickets() {
   return (
-    <div>
-      <TopDiv>
-        <PageTitle>Ticket Pool</PageTitle>        
-      </TopDiv>      
+    <ContainerDiv>
+      <Header />
       <HelperNavBar />
       <HelperList />
-    </div>
+      <Footer />
+    </ContainerDiv>
   );
 }
 

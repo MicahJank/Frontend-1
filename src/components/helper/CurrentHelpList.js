@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axiosWithAuth from '../../utils/axiosWithAuth';
 import CurrentHelpItem from "./CurrentHelpItem";
-import { BackGroundDiv, GridDiv } from "../../HelperStyle";
+
+import { ContentDiv} from "../../Style/AppStyle"
+import { GridDiv } from "../../Style/HelperStyle";
 
 function CurrentHelpList() {
   const [tickets, setTickets] = useState([]);
@@ -19,18 +21,18 @@ function CurrentHelpList() {
 }, []);
 
   return(
-    <BackGroundDiv>
+    <ContentDiv>
       <GridDiv>
-        {tickets.map(ticket => {               
+        {tickets.map(ticket => {         
           return (
             <CurrentHelpItem 
                 ticket={ticket} 
                 key={ticket.id} 
             />
           )}
-        )};  
-      </GridDiv>      
-    </BackGroundDiv>
+        )} 
+      </GridDiv> 
+    </ContentDiv>     
   );
 }
 

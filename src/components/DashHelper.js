@@ -7,18 +7,19 @@ import React from 'react';
 
 import HelperNavBar from './Navbar/HelperNavBar';
 import CurrentHelpList from "./helper/CurrentHelpList";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 
-import { TopDiv, PageTitle } from "../HelperStyle"
+import { ContainerDiv } from "../Style/AppStyle"
 
 function DashHelper() {
   return (
-    <div>
-      <TopDiv>
-        <PageTitle>DashBoard</PageTitle>
-      </TopDiv>      
+    <ContainerDiv>
+      <Header />
       <HelperNavBar />
-      <CurrentHelpList />      
-    </div>
+      <CurrentHelpList />
+      <Footer />      
+    </ContainerDiv>
   );
 }
 

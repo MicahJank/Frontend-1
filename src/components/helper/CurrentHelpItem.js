@@ -1,5 +1,5 @@
 import React from "react";
-import { TicketCard } from "../../HelperStyle"
+import { TicketCard } from "../../Style/HelperStyle"
 
 function HelpItem(props) {
   return (

@@ -84,6 +84,7 @@ function RegisterPage() {
           {errors.password && <ErrorP>{errors.password.message}</ErrorP>}
           <SubmitBtn type="submit" value="Register Now!" />
         </form>
+        <br/>
         <Link to="/"><HomeBtn>Go Back Home</HomeBtn></Link>
       </FormBody>
     </MainContainer>

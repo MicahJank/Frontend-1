@@ -1,10 +1,13 @@
 import React from 'react';
-import { Link, NavLink } from "react-router-dom";
-import { MenuDiv, MenuNav, NavLinkS } from "../../Style/AppStyle"
+import { Link, NavLink, useHistory } from "react-router-dom";
+import { MenuDiv, MenuNav } from "../../Style/AppStyle"
 
 function HelperNavBar() {
+  const history = useHistory();
+
   const logout = () => {
     localStorage.clear();
+    history.push('/login')
   }
 
   return (
@@ -14,7 +17,7 @@ function HelperNavBar() {
         <NavLink to="/dashboard/tickets">
           Ticket Pool
         </NavLink>
-        <button onClick={logout()}>Log Out</button>
+        <button onClick={()=>logout()}>Log Out</button>
         <Link to="/"><button>Go Back Home</button></Link>
       </MenuNav>    
     </MenuDiv>

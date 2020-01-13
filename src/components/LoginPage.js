@@ -53,7 +53,7 @@ function LoginPage() {
 
           </form>
           <br/>
-          <Link to="/"><HomeBtn>Go Back Home</HomeBtn></Link>
+          <HomeBtn href='https://nifty-minsky-1999f5.netlify.com/index.html'>Go Back Home</HomeBtn>
         </FormBody>
     </MainContainer>
     

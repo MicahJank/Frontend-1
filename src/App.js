@@ -22,7 +22,6 @@ function App() {
   return (
     <Router>
       <main className="App">
-        <Route exact path="/" component={HomePage} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/register" component={RegisterPage} />
         {/* 

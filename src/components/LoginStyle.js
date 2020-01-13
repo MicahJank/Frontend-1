@@ -89,7 +89,7 @@ export const SubmitBtn = styled.input`
 
 `;
 
-export const HomeBtn = styled.button`
+export const HomeBtn = styled.a`
 
   box-shadow: 0px 10px 14px -7px #276873;
 	background:linear-gradient(to bottom, #B91432; 5%, #408c99 100%);
@@ -103,7 +103,7 @@ export const HomeBtn = styled.button`
 	padding:13px 32px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #3d768a;
-  width: 30%;
+  width: 80%;
 
 `;
 
